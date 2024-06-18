@@ -1,8 +1,4 @@
 # %%
-import pandas as pd
-from pathlib import Path
-from typing import Union
-
 type Country = str
 type Gdp = float
 
@@ -270,7 +266,7 @@ country_gdps: dict[Country, Gdp] = {
     "Zimbabwe": 27_366_627_153.0852,
 }
 
-is_pie_majority:dict[Country, bool] = {
+is_pie_majority: dict[Country, bool] = {
     "Aruba": False,
     "Afghanistan": True,
     "Angola": False,
@@ -355,14 +351,12 @@ is_pie_majority:dict[Country, bool] = {
     "Guyana": False,
     "Hong Kong SAR, China": False,
     "Honduras": True,
-
     "Croatia": True,
     "Haiti": False,
     "Hungary": True,
     "Indonesia": False,
     "Isle of Man": True,
     "India": False,
-
     "Ireland": True,
     "Iran, Islamic Rep.": False,
     "Iraq": False,
@@ -490,6 +484,7 @@ is_pie_majority:dict[Country, bool] = {
     "Zimbabwe": False,
 }
 
-pie_majority_gdp = sum(country_gdps[country] for country in country_gdps if is_pie_majority[country])
+pie_majority_gdp = sum(
+    country_gdps[country] for country in country_gdps if is_pie_majority[country]
+)
 print(pie_majority_gdp / WORLD_GDP)
-# %%
